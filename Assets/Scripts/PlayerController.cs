@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
         hero = Core.Instance.gameManager.selectedHero;
         GameObject myHero = Instantiate(hero.heroPrefab, this.transform);
         animator = myHero.GetComponent<Animator>();
+        Instantiate(hero.startWeapon.prefab, this.transform);
     }
 
     private void Update() {
@@ -36,5 +37,9 @@ public class PlayerController : MonoBehaviour {
         isLookLeft = !isLookLeft;
         float x = transform.localScale.x * -1;
         transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
+    }
+
+    public bool GetIsLookLeft() {
+        return isLookLeft;
     }
 }
