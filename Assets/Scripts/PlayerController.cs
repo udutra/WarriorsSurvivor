@@ -1,20 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private Rigidbody2D playerRb;
-    public float moveSpeed = 2.5f;
+    [SerializeField] private Rigidbody2D playerRb;
+    [SerializeField] private Animator animator;
+    [SerializeField] private bool isLookLeft;
+    [SerializeField] private bool isWalk;
+    [SerializeField] private float moveSpeed = 2.5f;
 
-    // Start is called before the first frame update
-    void Start() {
+    private void Start() {
         playerRb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update() {
+    private void Update() {
         Vector2 moveDirection = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        playerRb.velocity = moveDirection.normalized * moveSpeed; ;
+
+        isWalk = moveDirection.sqrMagnitude != 0;
+
+        if (moveDirection.x > 0 && isLookLeft) {
+            Flip();
+        }
+
+        else if (moveDirection.x < 0 && !isLookLeft) {
+            Flip();
+        }
+
+        playerRb.velocity = moveDirection.normalized * moveSpeed;
+        animator.SetBool("isWalk", isWalk);
+    }
+
+    private void Flip() {
+        isLookLeft = !isLookLeft;
+        float x = transform.localScale.x * -1;
+        transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
     }
 }
