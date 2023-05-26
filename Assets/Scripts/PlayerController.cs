@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    [SerializeField] private HeroData hero;
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private Animator animator;
-    [SerializeField] private bool isLookLeft;
     [SerializeField] private bool isWalk;
-    [SerializeField] private float moveSpeed = 2.5f;
+    [SerializeField] private bool isLookLeft;
 
     private void Start() {
         playerRb = GetComponent<Rigidbody2D>();
+        hero = Core.Instance.gameManager.selectedHero;
+        GameObject myHero = Instantiate(hero.heroPrefab, this.transform);
+        animator = myHero.GetComponent<Animator>();
     }
 
     private void Update() {
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
         }
 
-        playerRb.velocity = moveDirection.normalized * moveSpeed;
+        playerRb.velocity = moveDirection.normalized * hero.moveSpeed;
         animator.SetBool("isWalk", isWalk);
     }
 
