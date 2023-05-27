@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972217921287088031}
   m_Layer: 0
-  m_Name: ArrowPivot
+  m_Name: BowPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4185575199381035469}
+  - component: {fileID: 3006718762779966692}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -63,3 +64,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3006718762779966692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249589170077085601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b04544d44560234ab65069b2231337c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projetilePrefab: {fileID: 1024728026325930914, guid: 984c5b36e9c9d2b4ea16a8c97ae22c12, type: 3}
+  delayAttack: 2
+  arrowSpeed: 6
+  arrowPivot: {fileID: 972217921287088031}
