@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
         GameObject myHero = Instantiate(hero.heroPrefab, this.transform);
         animator = myHero.GetComponent<Animator>();
         Instantiate(hero.startWeapon.prefab, this.transform);
-}
+    }
 
     private void Update() {
         moveDirection = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
