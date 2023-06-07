@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour {
+public class EnemyAI : MonoBehaviour, IDamageable {
 
     private Vector3 target;
     private bool isLookLeft;
@@ -16,10 +16,11 @@ public class EnemyAI : MonoBehaviour {
     private void Start() {
         _rigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine(nameof(IETargetUpdate));
+        currentHealth = enemyData.maxHeath;
     }
 
     private void Update() {
-        _rigidbody.velocity = moveDirection.normalized * enemyData.moveSpeed * knokBackFactor;
+        _rigidbody.velocity = enemyData.moveSpeed * knokBackFactor * moveDirection.normalized;
     }
 
     private IEnumerator IETargetUpdate() {
@@ -27,6 +28,13 @@ public class EnemyAI : MonoBehaviour {
             yield return new WaitForSeconds(enemyData.targetUpdateDelay);
             target = Core.Instance.gameManager.player.position;
             moveDirection = target - transform.position;
+        }
+    }
+
+    public void TakeDamage(float value, float knockback) {
+        currentHealth -= value;
+        if (currentHealth <= 0) {
+            Destroy(this.gameObject);
         }
     }
 }

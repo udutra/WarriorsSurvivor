@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   prefab: {fileID: 2059868652182273496, guid: 49675201ef8f12b4bb6dfcfeef38528e, type: 3}
+  damage: 5
+  knockBack: 0
