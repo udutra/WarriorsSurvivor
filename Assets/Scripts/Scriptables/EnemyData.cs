@@ -11,5 +11,5 @@ public class EnemyData : ScriptableObject {
     public float maxHeath;
     public float damage;
     public int xp;
-
+    public float knockbackWeakness;
 }

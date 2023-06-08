@@ -9,8 +9,7 @@ public class ProjectileEffect : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D collision) {
         
-        IDamageable damageable = collision.GetComponent<IDamageable>();
-        if (damageable != null ) {
+        if (collision.TryGetComponent(out IDamageable damageable)) {
             damageable.TakeDamage(data.damage, data.knockBack);
             hitAmount -= 1;
 

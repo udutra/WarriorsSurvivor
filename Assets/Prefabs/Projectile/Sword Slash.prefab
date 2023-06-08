@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: e8c095d26aa4b5d46b4c35c7d5d65fc5, type: 2}
-  lifeTime: 0.3
+  lifeTime: 0.2
   isTemporary: 1
 --- !u!61 &2222685551687600978
 BoxCollider2D:

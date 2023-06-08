@@ -17,6 +17,7 @@ MonoBehaviour:
   prefab: {fileID: 4683663053810897744, guid: e9db8427dbd7cb84a963a0065607f1b3, type: 3}
   targetUpdateDelay: 1.5
   moveSpeed: 0.8
-  maxHeath: 5
+  maxHeath: 100
   damage: 3
   xp: 20
+  knockbackWeakness: -2

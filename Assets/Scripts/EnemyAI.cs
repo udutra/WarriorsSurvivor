@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
     private Vector2 moveDirection;
     private float currentHealth;
     private float knokBackTime;
-    private int knokBackFactor = 1;
+    private float knokBackFactor = 1f;
     public GameObject hitArea;
     public EnemyData enemyData;
 
@@ -20,6 +20,15 @@ public class EnemyAI : MonoBehaviour, IDamageable {
     }
 
     private void Update() {
+
+        if (knokBackTime > 0) {
+            knokBackFactor = enemyData.knockbackWeakness;
+            knokBackTime -= Time.deltaTime;
+        }
+        else {
+            knokBackFactor = 1;
+        }
+
         _rigidbody.velocity = enemyData.moveSpeed * knokBackFactor * moveDirection.normalized;
     }
 
@@ -33,6 +42,8 @@ public class EnemyAI : MonoBehaviour, IDamageable {
 
     public void TakeDamage(float value, float knockback) {
         currentHealth -= value;
+
+        knokBackTime = knockback;
         if (currentHealth <= 0) {
             Destroy(this.gameObject);
         }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 518799693383292045, guid: cae24e98ccbdce94596596359c442b93, type: 3}
   damage: 10
-  knockBack: 0
+  knockBack: 0.4
