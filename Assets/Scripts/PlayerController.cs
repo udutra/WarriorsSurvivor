@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     private Vector2 moveDirection;
-    [SerializeField] private HeroData hero;
+    private HeroData hero;
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private Animator animator;
     [SerializeField] private bool isWalk;

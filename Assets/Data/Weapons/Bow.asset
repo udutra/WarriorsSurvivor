@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   prefab: {fileID: 7249589170077085601, guid: 76f3a21c94d4f7146b9b01e5b46c1b95, type: 3}
+  damage: 10
+  knockBack: 0
