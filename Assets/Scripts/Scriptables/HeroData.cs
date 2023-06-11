@@ -4,5 +4,6 @@ using UnityEngine;
 public class HeroData : ScriptableObject {
     public GameObject heroPrefab;
     public float moveSpeed;
+    public float maxHealth;
     public WeaponData startWeapon;
 }

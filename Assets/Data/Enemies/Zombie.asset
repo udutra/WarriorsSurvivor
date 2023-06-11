@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518a00438d5b76c49b86cd55ae3404ca, type: 3}
   m_Name: Zombie
   m_EditorClassIdentifier: 
+  enemyName: Zombie
+  enemyPortrait: {fileID: 21300000, guid: 19d6cdfa1dc097d4d8e7b154ec1eb12b, type: 3}
+  prefab: {fileID: 3486499239224402204, guid: e858910d0aac819428585ceab1866211, type: 3}
+  targetUpdateDelay: 1.5
+  moveSpeed: 0.8
+  maxHeath: 100
+  damage: 3
+  timeBetweenAttacks: 1
+  xp: 20
+  knockbackWeakness: -2

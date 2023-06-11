@@ -19,5 +19,6 @@ MonoBehaviour:
   moveSpeed: 0.8
   maxHeath: 100
   damage: 3
+  timeBetweenAttacks: 1
   xp: 20
   knockbackWeakness: -2

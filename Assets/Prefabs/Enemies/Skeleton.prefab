@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitArea: {fileID: 6642102181527328884}
   enemyData: {fileID: 11400000, guid: 589d20cc9ab02224797444ca16746429, type: 2}
+  isLookLeft: 0
 --- !u!1 &6642102181527328884
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2259734861746699087}
   - component: {fileID: 8035886707920935646}
+  - component: {fileID: 5288055304226919600}
   m_Layer: 7
   m_Name: Attack
   m_TagString: Untagged
@@ -263,3 +265,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6324828, y: 0.33066303}
   m_EdgeRadius: 0
+--- !u!114 &5288055304226919600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642102181527328884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af8b1f4b3287634c8d5da58754053f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

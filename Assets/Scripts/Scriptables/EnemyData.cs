@@ -10,6 +10,7 @@ public class EnemyData : ScriptableObject {
     public float moveSpeed;
     public float maxHeath;
     public float damage;
+    public float timeBetweenAttacks;
     public int xp;
     public float knockbackWeakness;
 }

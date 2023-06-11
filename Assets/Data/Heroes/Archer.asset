@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 4318396569925851686, guid: 72ed17bb6a731f547a1372c36d4adfb6, type: 3}
   moveSpeed: 2.3
+  maxHealth: 80
   startWeapon: {fileID: 11400000, guid: 9c383f198f1394b49b4ef08bab847ea0, type: 2}

@@ -16,7 +16,9 @@ public class EnemyAI : MonoBehaviour, IDamageable {
     private void Start() {
         _rigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine(nameof(IETargetUpdate));
+        StartCoroutine(nameof(IEAttack));
         currentHealth = enemyData.maxHeath;
+        hitArea.GetComponent<MobHitArea>().data = enemyData;
     }
 
     private void Update() {
@@ -45,6 +47,15 @@ public class EnemyAI : MonoBehaviour, IDamageable {
             yield return new WaitForSeconds(enemyData.targetUpdateDelay);
             target = Core.Instance.gameManager.player.position;
             moveDirection = target - transform.position;
+        }
+    }
+
+    private IEnumerator IEAttack() {
+        while (true) {
+            hitArea.SetActive(false);
+            yield return new WaitForSeconds(enemyData.timeBetweenAttacks);
+            hitArea.SetActive(true);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 
