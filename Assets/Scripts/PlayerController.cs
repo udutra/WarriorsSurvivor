@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour {
                 }
 
         }
-        Debug.Log(newMoveSpeed);
+        //Debug.Log(newMoveSpeed);
 
         return newMoveSpeed;
     }

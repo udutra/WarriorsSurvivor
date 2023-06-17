@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour {
 
+    private List<EnemyData> enemiesInScene = new();
+    private Dictionary<EnemyData, int> enemyTypeAmount = new();
     public Transform[] spawnPoints;
     public int idWave;
     public WaveController[] waves;
     public int maxEnimiesInScene;
-    private List<EnemyData> enemiesInScene = new();
     
     private void Start() {
         Core.Instance.waveManager = this;
@@ -17,10 +18,22 @@ public class WaveManager : MonoBehaviour {
 
     private void EnemyRegister(EnemyData data) {
         enemiesInScene.Add(data);
+        if (enemyTypeAmount.ContainsKey(data)) {
+            enemyTypeAmount[data] += 1;
+        }
+        else {
+            enemyTypeAmount.Add(data, 1);
+        }
     }
 
     public void EnemyUnregister(EnemyData data) {
         enemiesInScene.Remove(data);
+        if (enemyTypeAmount.ContainsKey(data)) {
+            enemyTypeAmount[data] -= 1;
+            if (enemyTypeAmount[data] <= 0) { 
+                enemyTypeAmount.Remove(data);
+            }
+        }
     }
 
     private IEnumerator Spawn() {
@@ -33,13 +46,24 @@ public class WaveManager : MonoBehaviour {
 
             int idMob = Random.Range(0, wave.enemies.Length);
             EnemyData enemyData = wave.enemies[idMob].enemy;
-            
-            GameObject mob = Instantiate(enemyData.prefab);
-            EnemyRegister(enemyData);
-            
-            int idSpawnPoint = Random.Range(0, spawnPoints.Length);
-            mob.transform.position = spawnPoints[idSpawnPoint].position;
+
+            if (enemyTypeAmount.ContainsKey(enemyData)) {
+                if (enemyTypeAmount[enemyData] < wave.enemies[idMob].amount) {
+                    NewMob(enemyData);
+                }
+            }
+            else {
+                NewMob(enemyData);
+            }
+                        
             yield return new WaitForSeconds(wave.intervalBetweenEnemies);
         }
+    }
+
+    private void NewMob(EnemyData data) {
+        EnemyRegister(data);
+        GameObject mob = Instantiate(data.prefab);
+        int idSpawnPoint = Random.Range(0, spawnPoints.Length);
+        mob.transform.position = spawnPoints[idSpawnPoint].position;
     }
 }

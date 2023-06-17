@@ -46,7 +46,7 @@ public class WeaponAreaEffect : MonoBehaviour {
                 }
         
         }
-        Debug.Log(damage);
+        //Debug.Log(damage);
 
         return damage;
     }
