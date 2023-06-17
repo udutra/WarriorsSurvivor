@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private bool isWalk;
     [SerializeField] private bool isLookLeft;
+    public PowerUpData moveSpeed;
 
     private void Start() {
         playerRb = GetComponent<Rigidbody2D>();
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
             Flip();
         }
 
-        playerRb.velocity = moveDirection.normalized * hero.moveSpeed;
+        playerRb.velocity = moveDirection.normalized * CalculateMoveSpeed();
         animator.SetBool("isWalk", isWalk);
     }
 
@@ -46,5 +47,30 @@ public class PlayerController : MonoBehaviour {
 
     public Vector2 GetMoveDirection() {
         return moveDirection;
+    }
+
+    private float CalculateMoveSpeed() {
+        float moveBase = hero.moveSpeed;
+        float bonus = Core.Instance.upgradeManager.GetPowerUpBonus(moveSpeed);
+        float newMoveSpeed = 0;
+        switch (moveSpeed.bonusType) {
+
+            case Unit.Sum: {
+                    newMoveSpeed = moveBase + bonus;
+                    break;
+                }
+            case Unit.Percentage: {
+                    newMoveSpeed = moveBase + (moveBase * (bonus / 100));
+                    break;
+                }
+            default: {
+                    Debug.LogWarning("Erro switch no script WeaponAreaEffect, método: CalculateDamage()");
+                    break;
+                }
+
+        }
+        Debug.Log(newMoveSpeed);
+
+        return newMoveSpeed;
     }
 }
