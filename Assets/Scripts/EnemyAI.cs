@@ -19,6 +19,8 @@ public class EnemyAI : MonoBehaviour, IDamageable {
         StartCoroutine(nameof(IEAttack));
         currentHealth = enemyData.maxHeath;
         hitArea.GetComponent<MobHitArea>().data = enemyData;
+        target = Core.Instance.gameManager.player.position;
+        moveDirection = target - transform.position;
     }
 
     private void Update() {
@@ -64,6 +66,7 @@ public class EnemyAI : MonoBehaviour, IDamageable {
 
         knokBackTime = knockback;
         if (currentHealth <= 0) {
+            Core.Instance.waveManager.EnemyUnregister(enemyData);
             Destroy(this.gameObject);
         }
     }

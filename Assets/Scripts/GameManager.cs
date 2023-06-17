@@ -3,10 +3,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     
     public HeroData selectedHero;
-    public Transform player;
+    [HideInInspector] public Transform player;
     public PlayerHealth playerHealth;
 
-    private void Start() {
+    public void PlayerRegister(Transform playerT) {
+        this.player = playerT;
         playerHealth = player.gameObject.GetComponent<PlayerHealth>();
     }
 }

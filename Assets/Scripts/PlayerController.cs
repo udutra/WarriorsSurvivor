@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public PowerUpData moveSpeed;
 
     private void Start() {
+        Core.Instance.gameManager.PlayerRegister(this.transform);
         playerRb = GetComponent<Rigidbody2D>();
         hero = Core.Instance.gameManager.selectedHero;
         GameObject myHero = Instantiate(hero.heroPrefab, this.transform);
