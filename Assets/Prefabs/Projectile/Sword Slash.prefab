@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3191701429952391702}
   - component: {fileID: 7690221636139711839}
   - component: {fileID: 1658386733242807966}
-  - component: {fileID: 1154344114766167799}
   - component: {fileID: 2222685551687600978}
+  - component: {fileID: 1154344114766167799}
   m_Layer: 8
   m_Name: Sword Slash
   m_TagString: Untagged
@@ -108,21 +108,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1154344114766167799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7681220234655045402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568af873a8e271c4d89fa3b3d267c2b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: e8c095d26aa4b5d46b4c35c7d5d65fc5, type: 2}
-  lifeTime: 0.2
-  isTemporary: 1
 --- !u!61 &2222685551687600978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,3 +153,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4762564, y: 0.794295}
   m_EdgeRadius: 0
+--- !u!114 &1154344114766167799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681220234655045402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568af873a8e271c4d89fa3b3d267c2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: e8c095d26aa4b5d46b4c35c7d5d65fc5, type: 2}
+  might: {fileID: 11400000, guid: 419181ebdbd9c03409a9ea7e8f52f2aa, type: 2}
+  lifeTime: 0.2
+  isTemporary: 1
