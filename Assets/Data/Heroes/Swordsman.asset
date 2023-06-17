@@ -16,3 +16,6 @@ MonoBehaviour:
   moveSpeed: 1.8
   maxHealth: 80
   startWeapon: {fileID: 11400000, guid: e8c095d26aa4b5d46b4c35c7d5d65fc5, type: 2}
+  abilities:
+  - powerUp: {fileID: 11400000, guid: 419181ebdbd9c03409a9ea7e8f52f2aa, type: 2}
+    value: 25

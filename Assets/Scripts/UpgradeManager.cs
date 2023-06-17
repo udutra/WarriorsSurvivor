@@ -14,7 +14,9 @@ public class UpgradeManager : MonoBehaviour {
 
 
         //Pegar o bonus inerente ao Herois
-
+        if (Core.Instance.gameManager.selectedHero.GetPowerUpBonus(powerUp) > 0) {
+            bonus += Core.Instance.gameManager.selectedHero.GetPowerUpBonus(powerUp);
+        }
 
         return bonus;
     }
