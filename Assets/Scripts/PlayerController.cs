@@ -74,4 +74,22 @@ public class PlayerController : MonoBehaviour {
 
         return newMoveSpeed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        switch (collision.gameObject.tag) {
+            case "Item": {
+                    ItemCollectible item = collision.gameObject.GetComponent<ItemCollectible>();
+                    Core.Instance.gameManager.GetItemCollectible(item);
+                    Destroy(collision.gameObject);
+                    break;
+                }
+            case "Untagged": {
+                    break;
+                }
+            default: {
+                    Debug.LogWarning("Erro switch no script WeaponAreaEffect, método: OnTriggerEnter2D(). Tag =" + collision.gameObject.tag + " - Nome: " + collision.gameObject.name);
+                    break;
+                }
+        }
+    }
 }

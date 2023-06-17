@@ -19,6 +19,8 @@ MonoBehaviour:
   moveSpeed: 0.8
   maxHeath: 5
   damage: 3
-  timeBetweenAttacks: 1
   xp: 20
   knockbackWeakness: -2
+  timeBetweenAttacks: 1
+  itemChance: 100
+  itemPrefab: {fileID: 1140575874145608063, guid: edaf0e598541e5c4fb520b2a67bebc07, type: 3}

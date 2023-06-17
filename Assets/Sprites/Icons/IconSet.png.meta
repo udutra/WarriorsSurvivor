@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 56
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -6291,7 +6310,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IconSet_294
+      name: Bread
       rect:
         serializedVersion: 2
         x: 240
@@ -7572,7 +7591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IconSet_355
+      name: Xp Ball
       rect:
         serializedVersion: 2
         x: 168
@@ -7614,7 +7633,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IconSet_357
+      name: Coin
       rect:
         serializedVersion: 2
         x: 216
@@ -11131,6 +11150,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Bread: -719691041
+      Coin: 295186267
       IconSet_0: -1209443378
       IconSet_1: 792231646
       IconSet_10: 1026734401
@@ -11348,7 +11369,6 @@ TextureImporter:
       IconSet_291: 991498689
       IconSet_292: -290726156
       IconSet_293: 161317422
-      IconSet_294: -719691041
       IconSet_295: 2127739587
       IconSet_296: -581837823
       IconSet_297: -666028774
@@ -11416,9 +11436,7 @@ TextureImporter:
       IconSet_352: -71715341
       IconSet_353: -393165464
       IconSet_354: 1625643763
-      IconSet_355: -1566834806
       IconSet_356: 1805412410
-      IconSet_357: 295186267
       IconSet_358: -844844412
       IconSet_359: -68119583
       IconSet_36: -61004440
@@ -11655,9 +11673,9 @@ TextureImporter:
       IconSet_97: 1277327254
       IconSet_98: 410066256
       IconSet_99: -1270103754
-  spritePackingTag: 
+      Xp Ball: -1566834806
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

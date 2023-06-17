@@ -710,6 +710,7 @@ MonoBehaviour:
   selectedHero: {fileID: 11400000, guid: feae5fa94ae13e147bc25b85d36d3a83, type: 2}
   player: {fileID: 414845976}
   playerHealth: {fileID: 0}
+  xp: 0
 --- !u!4 &526632126
 Transform:
   m_ObjectHideFlags: 0

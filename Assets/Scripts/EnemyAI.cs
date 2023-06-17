@@ -66,6 +66,9 @@ public class EnemyAI : MonoBehaviour, IDamageable {
 
         knokBackTime = knockback;
         if (currentHealth <= 0) {
+            GameObject xp = Instantiate(enemyData.itemPrefab);
+            xp.GetComponent<ItemCollectible>().SetValue(enemyData.xp);
+            xp.transform.position = transform.position;
             Core.Instance.waveManager.EnemyUnregister(enemyData);
             Destroy(this.gameObject);
         }

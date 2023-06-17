@@ -10,7 +10,12 @@ public class EnemyData : ScriptableObject {
     public float moveSpeed;
     public float maxHeath;
     public float damage;
-    public float timeBetweenAttacks;
-    public int xp;
+    public float xp;
     public float knockbackWeakness;
+    public float timeBetweenAttacks;
+
+    [Header("Item de Boss / SubBoss")]
+    public int itemChance;
+    public GameObject itemPrefab;
+
 }
